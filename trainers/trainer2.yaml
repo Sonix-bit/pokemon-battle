@@ -1,0 +1,8 @@
+name: Alain
+pokemon:
+  zekrom: ['dragon claw', 'cut', 'strength', 'dragon pulse']
+  zorua: ['hyper voice', 'scratch', 'cut']
+  magikarp: ['tackle']
+  charmander: ['dragon claw', 'mega kick', 'dragon pulse', 'strength']
+  zubat: ['wing attack', 'quick attack']
+  wailord: ['water gun', 'strength', 'hydro pump', 'hyper voice']
