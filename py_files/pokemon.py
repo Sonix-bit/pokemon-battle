@@ -1,6 +1,7 @@
 from typing import Dict, Union, List
 from pathlib import Path
 from py_files.moves import Move
+import os
 
 class Pokemon:
 
@@ -8,7 +9,7 @@ class Pokemon:
     Pokemon Class containing name, trainer and stats (will add nature, abilities and items)
     """
 
-    STATS = ["HP", "ATK", "DEF", "SPD"] # "SP ATK", "SP DEF"
+    STATS = ["HP", "ATK", "DEF", "SP ATK", "SP DEF", "SPD"]
     BUFFS = {
         "ATK": 1,
         "DEF": 1,
@@ -23,8 +24,18 @@ class Pokemon:
         self.name = name
         self.stats = stats
         self.moves = moves
+        self.img = os.path.join("img", f"{self.name.lower()}.jpg")
+        self.status = None
         
     # Private Methods
+    def create_move_list(self, move_dict) -> List[Move]:
+        move_list = list()
+        for move in self.moves:
+            curr_move = move_dict[move.lower()] 
+            move_list.append(Move(curr_move))
+
+        self.moves = move_list
+        return self.moves
 
     # Public Methods
     def get_name(self):
@@ -54,6 +65,14 @@ class Pokemon:
     def get_moves(self):
         return self.moves
 
+    def get_img(self):
+        return self.img
+    
+    def get_status(self):
+        # Flag determining whether Pokemon is affected with a status condition
+        # paralysis, freeze, burn, poison, sleep
+        return self.status
+
     def reduce_hp(self, damage):
         self.stats["HP"] -= damage
         if self.stats["HP"] <= 0:
@@ -66,4 +85,4 @@ class Pokemon:
             print(f"{self.name} has fainted")
             return True
         
-        return False    
+        return False

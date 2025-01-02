@@ -1,0 +1,22 @@
+name,id,accuracy,pp,power,priority,type,short_description,damage_class,stat_change,status_change,chance,target
+Take Down,36,85.0,20,90.0,0,Normal,User receives 1/4 the damage it inflicts in recoil.,Physical,"HP,-0.25",None,100,single
+Tail Whip,39,100.0,30,0,0,Normal,Lowers the target's Defense by one stage.,Status,"DEF,-1",None,100,enemy
+Ice Beam,58,100.0,10,90.0,0,Ice,Has a 10% chance to freeze the target.,Special,"",Freeze,10,single
+Bite,44,100.0,25,60.0,0,Dark,Has a 10% chance to make the target flinch.,Physical,"",Flinch,10,single
+Growl,45,100.0,40,0,0,Normal,Lowers the target's Attack by one stage.,Status,"ATK,-1",None,100,enemy
+Thunderbolt,85,100.0,15,90.0,0,Electric,Has a 10% chance to paralyze the target.,Special,"",paralysis,10
+Flame Charge,488,100.0,20,50.0,0,Fire,Inflicts regular damage. Raises the user's Speed by one stage.,Physical,"",None,100
+Dragon Claw,337,100.0,15,80.0,0,Dragon,Inflicts regular damage with no additional effect.,Physical,"",None,100
+Shadow Claw,421,100.0,15,70.0,0,Ghost,Has an increased chance for a critical hit.,Physical,"CRIT,0.125",None,100
+Swords Dance,14,,20,0,0,Normal,Raises the user's Attack by two stages.,Status,"ATK,2",None,100
+Giga Drain,202,100.0,10,75.0,0,Grass,Drains half the damage inflicted to heal the user.,Special,"HP,0.5",None,100
+Sleep Powder,79,75.0,15,,0,Grass,Puts the target to sleep.,Status,"",Sleep,100
+Sludge Bomb,188,100.0,10,90.0,0,Poison,Has a 10% chance to poison the target.,Special,"",Poison,10
+Shadow Ball,247,100.0,15,80.0,0,Ghost,Has a 10% chance to lower the target's Special Defense by one stage.,Special,"SP_DEF,-1",None,10
+Dazzling Gleam,605,100.0,10,80.0,0,Fairy,Inflicts regular damage with no additional effect.,Special,"",None,100
+Taunt,269,100.0,20,0,0,Dark,"For the next few turns, the target can only use damaging moves.",Status,"",None,100
+Brick Break,280,100.0,15,75.0,0,Fighting,Destroys Reflect and Light Screen.,Physical,"",None,100
+Hydro Pump,56,80.0,5,110.0,0,Water,Inflicts regular damage with no additional effect.,Special,"",None,100
+Iron Tail,231,75.0,15,100.0,0,Steel,Has a 10% chance to lower the target's Defense by one stage.,Physical,"DEF,-1",None,10
+Quick Attack,98,100.0,30,40.0,1,Normal,Inflicts regular damage with no additional effect.,Physical,"",None,100
+Charm,204,100.0,20,0,0,Fairy,Lowers the target's Attack by two stages.,Status,"ATK,-2",None,100

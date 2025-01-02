@@ -6,19 +6,21 @@ from py_files.trainer import Trainer
 import keyboard
 from ast import literal_eval
 import pygame
+import os
 
 # Reading in data from files
-pokemon_file = "pokemon-data.csv"
-pokemon = pd.read_csv(f"./data_files/{pokemon_file}", sep = ";")
+pokemon_file = "pokemon_subset.csv"
+pokemon = pd.read_csv(os.path.join("data_files_subset", pokemon_file), sep = ";")
 print(pokemon.head())
 
-pokemon_moves = "metadata_pokemon_moves.csv"
-moves = pd.read_csv(f"./data_files/{pokemon_moves}")
+pokemon_moves = "pokemon_moves.csv"
+moves = pd.read_csv(os.path.join("data_files_subset", pokemon_moves))
 print(moves.head())
 
 matchup_file = "type_chart.csv"
-type_matchup = pd.read_csv(f"./data_files/{matchup_file}")
+type_matchup = pd.read_csv(os.path.join("data_files_subset", matchup_file), index_col = "Attacking")
 print(type_matchup.head())
+print(type_matchup["Ice"]["Fire"]) # type_matchup[defending_type][attacking_type]
 
 # idx = pokemon.loc[pokemon["Name"] == "Pichu"].index.astype(int)
 # print(list(pokemon["Moves"].iloc[idx])[0])
@@ -29,22 +31,26 @@ moves_dict = {}
 # Converting Pokemon and Moves into objects -> Game
 for index, row in moves.iterrows():
     # print(row["short_description"])
-    if "no additional effect" in row["short_description"]: 
-        moves_dict[row["name"]] = {
-            "accuracy": row["accuracy"],
-            "pp": row["pp"],
-            "power": row["power"],
-            "priority": row["priority"],
-            "type": row["type"],
-            "damage_class": row["damage_class"],
-            "side_effects": row["short_description"] # Need to refine to allow for secondary effects
-        }
-     
+    # if "no additional effect" in row["short_description"]: 
+    moves_dict[row["name"]] = {
+        "accuracy": row["accuracy"],
+        "pp": row["pp"],
+        "power": row["power"],
+        "priority": row["priority"],
+        "type": row["type"],
+        "damage_class": row["damage_class"],
+        "description": row["short_description"],
+        "stat_change": row["stat_change"],
+        "status_change": row["status_change"],
+        "chance": row["chance"] # Need to refine to allow for secondary effects
+    }
+    
 print("Dictionary of moves: ", moves_dict) # Need to manage status moves
 moves_dict = {k.lower(): v for k, v in moves_dict.items()}
 
 # Create Moves and Pokemon classes just before battle starts (need a counter for PP and tracking)
-
+import sys
+sys.exit(0)
 # Create Trainer Classes
 print("***Welcome to Pokemon Math: no EVs, no IVs, 100% luck and calculations***")
 trainer1_name = str(input("Player 1's name: "))
