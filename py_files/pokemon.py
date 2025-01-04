@@ -68,6 +68,10 @@ class Pokemon:
     def get_img(self):
         return self.img
     
+    def print_moves(self):
+        for i, move in enumerate(self.moves):
+            print(f"{i + 1} - {move}")
+    
     def get_status(self):
         # Flag determining whether Pokemon is affected with a status condition
         # paralysis, freeze, burn, poison, sleep

@@ -129,11 +129,37 @@ if __name__ == "__main__":
         a. Switch Pokemon in if fainted
     6. Move turn += 1 (check if an opponent has won)
     """
-    battle = Battle(ash, alain)
+    battle = Battle(ash, alain, "single") # Implemented single battle for now
     battle.pokemon_selection()
     battle.battle_start()
     counter = 1
-    while battle.TRAINER_1_ACTIVE == 0 or battle.TRAINER_2_ACTIVE == 0:
+    winner = None
+
+    while battle.TRAINER_1_ACTIVE != 0 or battle.TRAINER_2_ACTIVE != 0:
         print(f"------ Turn {counter} ------")
+        # Move Selection -> Calculations
+        print(battle.TRAINER_1_ACTIVE[0].get_name())
+        trainer1_moves = battle.initial_options(battle.get_trainer_1(), battle.get_trainer_1_active())
+
+        print(battle.TRAINER_2_ACTIVE[0].get_name())
+        trainer2_moves = battle.initial_options(battle.get_trainer_2(), battle.get_trainer_2_active())
         
+        # Collate all move list together
+        moves_for_turn = trainer1_moves + trainer2_moves
+        print(moves_for_turn)
+
+        # Back end functions to determine move order
+        switch_moves, battle_moves = battle.calculating_move_order(moves_for_turn) # Going to be passed as a 2D ordered list
+        battle.process_switch(switch_moves)
+        battle.process_battle_move(battle_moves, moves_dict, type_matchup)
+
+        # Turn end checks
+        if len(battle.TRAINER_1_ACTIVE) == 0 or battle.TRAINER_1_ACTIVE[0].get_hp() == 0:
+            print(f"Battle Over! {battle.get_trainer_2().get_name()} has won!")
+            break
+
+        elif len(battle.TRAINER_2_ACTIVE) == 0 or battle.TRAINER_2_ACTIVE[0].get_hp() == 0:
+            print(f"Battle Over! {battle.get_trainer_1().get_name()} has won!")
+            break
+
         counter += 1

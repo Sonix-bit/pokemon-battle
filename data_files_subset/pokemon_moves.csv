@@ -20,3 +20,7 @@ Hydro Pump,56,80.0,5,110.0,0,Water,Inflicts regular damage with no additional ef
 Iron Tail,231,75.0,15,100.0,0,Steel,Has a 10% chance to lower the target's Defense by one stage.,Physical,"DEF,-1",None,10
 Quick Attack,98,100.0,30,40.0,1,Normal,Inflicts regular damage with no additional effect.,Physical,"",None,100
 Charm,204,100.0,20,0,0,Fairy,Lowers the target's Attack by two stages.,Status,"ATK,-2",None,100
+Thunder,87,70.0,10,110.0,0,Electric,Has a 10% chance to paralyze the target.,Special,"",Paralysis,10
+Rock Tomb,317,95.0,15,60.0,0,Rock,Has a 100% chance to lower the target's Speed by one stage.,Physical,"SPD,-1",None,100
+Venoshock,474,100.0,10,65.0,0,Poison,Inflicts double damage if the target is Poisoned.,Special,"",None,100
+Icy Wind,196,95.0,15,55.0,0,Ice,Has a 100% chance to lower the target's Speed by one stage.,Special,"SPD,-1",None,100

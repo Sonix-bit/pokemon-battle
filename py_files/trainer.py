@@ -15,6 +15,9 @@ class Trainer:
         for i, pkmn in enumerate(self.team):
             print(f"{i + 1} - {pkmn.get_name()}")
     
+    # def trainer_options(self):
+    #     print("1 - Battle\n2- Pokemon")
+    
     def add_pokemon(self, mon: Pokemon):
         if len(self.team) < 6:
             self.team.append(mon)

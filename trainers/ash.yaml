@@ -1,5 +1,5 @@
 name: Ash
 pokemon: 
-  squirtle: ['brick break', 'hydro pump', 'tail whip', 'ice beam']
-  pikachu: ['thunderbolt', 'tail whip', "iron tail", 'quick attack']
-  eevee: ["quick attack", 'bite', 'take down', "charm"]
+  squirtle: ['brick break', 'hydro pump', 'bite', 'ice beam']
+  pikachu: ['thunderbolt', 'thunder', "iron tail", 'quick attack']
+  eevee: ["quick attack", 'bite', 'take down', "shadow ball"]

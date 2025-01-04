@@ -1,5 +1,5 @@
 name: Alain
 pokemon:
-  charmander: ["flame charge", "dragon claw", "shadow claw", "swords dance"]
-  bulbasaur: ["giga drain", "sleep powder", "growl", "sludge bomb"]
-  gastly: ["shadow ball", "dazzling gleam", "sludge bomb", "taunt"]
+  charmander: ["flame charge", "dragon claw", "shadow claw", "rock tomb"]
+  bulbasaur: ["giga drain", "take down", "venoshock", "sludge bomb"]
+  gastly: ["shadow ball", "dazzling gleam", "sludge bomb", "icy wind"]
